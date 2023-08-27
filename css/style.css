@@ -1,0 +1,61 @@
+header {
+    background-color: orange;
+    display: flexbox;
+}
+
+.title {
+    text-align: left;
+    font-size: 50px;
+}
+
+.highscores {
+    float: right;
+    size: 100px;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    background-color: red;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.title-rules {
+    font-size: 60px;
+}
+
+.rules {
+    font-size: 40px;
+}
+
+.timer {
+    background-color: lime;
+    display: inline-flex;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 5px;
+    width: 50px;
+
+}
+
+.question {}
+
+.answers {}
+
+#btn {
+    background-color: blue;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    border-color: greenyellow;
+    width: 300px;
+
+}
