@@ -11,24 +11,29 @@
 
 <body>
     <header>
-        <div class="title">CODING QUIZ GAME<a href="" class="highscores float-end">HIGHSCORES</a></div>
+        <div class="timer"><span class="timer-text">TIME LEFT: 0</span><a href=""
+                class="highscores float-end">HIGHSCORES</a></div>
+        <!-- <div class-="timer"><span class="timer-text">TIME LEFT: 0</span></div> -->
     </header>
+
     <main class="container">
         <div class="title-rules">RULES OF THE GAME!</div>
         <div class="rules">
             <p>1. You have 60 seconds to complete quiz.</p>
             <p>2. Once you answer questions you can't go back.</p>
             <p>3. If you answer wrong you will loose 10 seconds of time.</p>
+            <p>4. Timer starts when "START" button is clicked.</p>
         </div>
-        <div class-="timer"><span>TIME LEFT: 0</span></div>
-        <p class="question"></p>
-        <ul class="answers"></ul>
+        <section id="question-page">
+            <p id="question"></p>
+            <ul id="responses"></ul>
+        </section>
+
         <div class="buttons">
-            <!-- <button class="exit-button" id="btn">EXIT</button> -->
             <button class="start-button" id="btn">START</button>
         </div>
-        </div>
     </main>
+
     <script src="./js/script.js"></script>
 </body>
 
