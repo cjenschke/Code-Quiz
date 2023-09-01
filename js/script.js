@@ -1,3 +1,19 @@
+// Variables
+let currentQuestion = 0;
+let score = 0;
+let timeLeft = 60;
+let timerInterval;
+let highScore = 0;
+
+// Elements
+const startButton = document.getElementById("start-btn");
+const startOverBtn = document.getElementById('start-over-btn');
+const questionElement = document.getElementById("question");
+const choicesElement = document.getElementById("choices");
+const highScoreElement = document.getElementById("high-score");
+const scoreEl = document.getElementById('current-score');
+const h1Element = document.querySelector('h1');
+
 const quizData = [
     {
         question: 'What is JavaScript used for?',
@@ -21,30 +37,10 @@ const quizData = [
     }
 ];
 
-// Variables
-let currentQuestion = 0;
-let score = 0;
-let timeLeft = 60;
-let timerInterval;
-let highScore = 0;
-
-// Elements
-const startButton = document.getElementById("start-btn");
-const startOverBtn = document.getElementById('start-over-btn');
-const questionElement = document.getElementById("question");
-const choicesElement = document.getElementById("choices");
-const highScoreElement = document.getElementById("high-score");
-
-// Event listeners
-startButton.addEventListener("click", startQuiz);
-startOverBtn.addEventListener('click', function () {
-    // Add code here to reset the game or perform any necessary actions
-});
-
-
 // Functions
 function startQuiz() {
-    startButton.style.display = "none";
+    startButton.style.display = 'none';
+    startOverBtn.style.display = 'block';
     showQuestion();
     startTimer();
 }
@@ -69,6 +65,9 @@ function selectAnswer(event) {
 
     if (selectedAnswer === currentQuizData.correctAnswer) {
         score++;
+        updateScore(score);
+    } else {
+        subtractTime()
     }
 
     currentQuestion++;
@@ -80,23 +79,9 @@ function selectAnswer(event) {
     }
 }
 
-function updateScore(points) {
-    score += points;
-    // Update the score display on the UI
-    const scoreDisplay = document.getElementById('current-score');
-    scoreDisplay.textContent = score;
+function updateScore(score) {
+    scoreEl.textContent = score;
 }
-
-// function startTimer() {
-//     timerInterval = setInterval(() => {
-//         timeLeft--;
-//         document.getElementById("timer-display").textContent = timeLeft;
-
-//         if (timeLeft <= 0) {
-//             endQuiz();
-//         }
-//     }, 1000);
-// }
 
 function startTimer() {
     // Update the timer display on the UI
@@ -116,24 +101,27 @@ function startTimer() {
     }, 1000);
 }
 
-function subtractTime(seconds) {
-    time -= seconds;
+function subtractTime() {
+    timeLeft = timeLeft - 10;
     // Update the timer display on the UI
     const timerDisplay = document.getElementById('current-time');
-    timerDisplay.textContent = time;
+    timerDisplay.textContent = timeLeft;
 }
 
 function endQuiz() {
     clearInterval(timerInterval);
-    document.getElementById("quiz-container").innerHTML = "<h2>Quiz completed!</h2>";
-    document.getElementById("score-display").textContent = score;
+    h1Element.textContent = 'Game Over';
+    document.getElementById("score-display").textContent = "Your score " + score;
 
     const initials = prompt("Enter your initials:");
     const finalScore = score;
 
-    if (finalScore > highScore) {
-        highScore = finalScore;
-        highScoreElement.textContent = `${initials}: ${highScore}`;
-    }
+    // if (finalScore > highScore) {
+    //     highScore = finalScore;
+    //     highScoreElement.textContent = `${initials}: ${highScore}`;
+    // }
 }
 
+// Event listeners
+startButton.addEventListener("click", startQuiz);
+startOverBtn.addEventListener("click", endQuiz);

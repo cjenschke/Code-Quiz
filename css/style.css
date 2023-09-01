@@ -32,11 +32,16 @@ h2 {
 }
 
 ul {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
+    /* gap: 10px; */
+    /* list-style-type: none; */
     font-size: 25px;
+    display: inline-block;
+    position: relative;
+
 }
 
 li {
@@ -45,7 +50,12 @@ li {
     box-sizing: content-box;
     width: 100%;
     text-align: center;
+    justify-content: center;
     padding: 5px;
+    margin: 2rem;
+    display: flex;
+    text-align: center;
+
 }
 
 li:hover {
@@ -94,6 +104,8 @@ body {
     border-color: greenyellow;
     width: 300px;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 
 }
 
