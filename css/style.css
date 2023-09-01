@@ -1,35 +1,17 @@
 header {
     background-color: orange;
+    text-align: center;
     display: flexbox;
+    border-radius: 20px;
 }
 
 .title {
-    text-align: left;
+    text-align: center;
     font-size: 25px;
 }
 
-.timer {
-    display: block;
-    justify-content: center;
-
-}
-
-.timer-text {
-    font-size: 25px;
-    justify-content: center;
-}
-
-.highscores.float-end {
-    float: right;
-    font-size: 25px;
-}
-
-body {
+.quiz-container {
     background-color: white;
-}
-
-.container {
-    background-color: red;
     padding: 10px;
     margin: auto;
     display: flex;
@@ -39,15 +21,57 @@ body {
     box-sizing: border-box;
 }
 
-.title-rules {
-    font-size: 50px;
+h2 {
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    box-sizing: content-box;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+
 }
 
-.rules {
-    font-size: 30px;
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 25px;
 }
 
-#btn {
+li {
+    background: rgb(205, 198, 198);
+    border-radius: 20px;
+    box-sizing: content-box;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+li:hover {
+    background-color: greenyellow;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+
+}
+
+#score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+body {
+    background-color: white;
+}
+
+#start-btn {
     background-color: blue;
     color: white;
     font-size: 40px;
@@ -57,3 +81,20 @@ body {
     border-radius: 10px;
 
 }
+
+.buttons {
+    text-align: center;
+}
+
+#start-over-btn {
+    background-color: blue;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    border-color: greenyellow;
+    width: 300px;
+    border-radius: 10px;
+
+}
+
+#score-display {}
