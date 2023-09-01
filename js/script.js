@@ -13,6 +13,7 @@ const choicesElement = document.getElementById("choices");
 const highScoreElement = document.getElementById("high-score");
 const scoreEl = document.getElementById('current-score');
 const h1Element = document.querySelector('h1');
+const messageElement = document.getElementById('message');
 
 const quizData = [
     {
@@ -65,8 +66,11 @@ function selectAnswer(event) {
 
     if (selectedAnswer === currentQuizData.correctAnswer) {
         score++;
+        h1Element.textContent = 'Correct!';
         updateScore(score);
     } else {
+        // messageElement.textContent = 'Wrong Answer!'
+        h1Element.textContent = 'Wrong Answer!';
         subtractTime()
     }
 
