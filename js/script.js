@@ -16,10 +16,10 @@ const highScoreElement = document.getElementById("high-score");
 const scoreElement = document.getElementById('current-score');
 const h1Element = document.querySelector('h1');
 const messageElement = document.getElementById('message');
+const timerDisplay = document.getElementById('current-time');
 let highScoreDisplay = localStorage.getItem('highScore');
 let savedInitials = localStorage.getItem('initials');
 
-const timerDisplay = document.getElementById('current-time');
 
 const quizData = [
     {
