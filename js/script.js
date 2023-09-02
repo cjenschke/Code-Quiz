@@ -16,8 +16,9 @@ const highScoreElement = document.getElementById("high-score");
 const scoreElement = document.getElementById('current-score');
 const h1Element = document.querySelector('h1');
 const messageElement = document.getElementById('message');
-let highScoreDisplay = localStorage.getItem('highScoreDisplay');
+let highScoreDisplay = localStorage.getItem('highScore');
 let savedInitials = localStorage.getItem('initials');
+
 const timerDisplay = document.getElementById('current-time');
 
 const quizData = [
@@ -135,10 +136,11 @@ function endQuiz() {
     // localStorage.setItem('high score', 'highScore');
     if (score > highScore) {
         highScore = score;
-        localStorage.setItem('high score', highScore);
+        highScoreElement.textContent = highScore;
+        localStorage.setItem('highScore', highScore);
 
         // highScoreElement.textContent = 'Your high score is' + highScore;
-        highScoreElement.textContent = `${initials}: ${highScore}`;
+        highScoreElement.textContent = `${savedInitials}: ${highScore}`;
     }
 }
 
@@ -148,4 +150,12 @@ function endQuiz() {
 startButton.addEventListener("click", startQuiz);
 startOverBtn.addEventListener("click", function () {
     window.location.reload()
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    highScoreElement.textContent = highScore;
+    if (highScoreDisplay) {
+        highScore = parseInt(highScoreDisplay);
+        highScoreElement.textContent = `   ${savedInitials}    ${highScore}`;
+    }
 });
