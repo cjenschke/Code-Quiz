@@ -142,6 +142,7 @@ function endQuiz() {
         // highScoreElement.textContent = 'Your high score is' + highScore;
         highScoreElement.textContent = `${savedInitials}: ${highScore}`;
     }
+    window.location.reload();
 }
 
 
